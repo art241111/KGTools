@@ -46,6 +46,7 @@ fun KConnectScreen(
     onBack: () -> Unit,
     onConnect: (String) -> Unit,
     connectStatus: State<Status>,
+    onIpChange: (String) -> Unit,
     defaultIP: String = "192.168.31.63"
 ) {
     val imageVm = viewModel<ImageViewModel>()
@@ -86,6 +87,7 @@ fun KConnectScreen(
                 onBack()
                 imageVm.stopChangeImage()
             },
+            onIpChange = onIpChange,
             defaultIP = defaultIP,
         )
     }
@@ -111,6 +113,7 @@ private fun ConnectBottomSheet(
     modifier: Modifier = Modifier,
     connectStatus: Status,
     onConnect: (String) -> Unit,
+    onIpChange: (String) -> Unit,
     onCancel: () -> Unit,
     defaultIP: String = "192.168.31.63",
 ) {
@@ -153,6 +156,9 @@ private fun ConnectBottomSheet(
                 ),
                 keyboardActions = KeyboardActions(
                     onDone = {
+                        if (textIP != defaultIP)
+                            onIpChange(textIP)
+
                         onConnect(textIP)
                         isFirstError = true
                         this.defaultKeyboardAction(ImeAction.Done)
@@ -167,6 +173,9 @@ private fun ConnectBottomSheet(
             Button(
                 modifier = Modifier.wrapContentHeight(),
                 onClick = {
+                    if (textIP != defaultIP)
+                        onIpChange(textIP)
+
                     onConnect(textIP)
                     isFirstError = true
                 },
