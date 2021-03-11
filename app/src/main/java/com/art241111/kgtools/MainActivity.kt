@@ -46,11 +46,3 @@ fun Greeting(helper: SharedPreferencesHelperForString) {
         defaultIP = ip
     )
 }
-
-// @Preview(showBackground = true)
-// @Composable
-// fun DefaultPreview() {
-//     KGToolsTheme {
-//         Greeting("Android")
-//     }
-// }
