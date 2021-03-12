@@ -10,3 +10,4 @@ rootProject.name = "KGTools"
 include ':app'
 include ':kconnectscreen'
 include ':SaveAndLoadInformation'
+include ':KControlSystem'
