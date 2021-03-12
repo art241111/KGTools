@@ -13,12 +13,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.art241111.joystickcomposeview.JoystickView
 import com.art241111.kcontrolsystem.R
 import com.art241111.kcontrolsystem.buttons.arrowButton.ArrowButton
 import com.art241111.kcontrolsystem.data.Axes
 import com.art241111.kcontrolsystem.data.MoveInTime
+import com.art241111.kcontrolsystem.theme.red500
 
 /**
  * Основной экран для управления роботом в пространстве
@@ -60,16 +63,16 @@ private fun JoystickControl(
     val x = remember { mutableStateOf(0f) }
     val y = remember { mutableStateOf(0f) }
 
-    // Joystick(
-    //     modifier = modifier,
-    //     x = x,
-    //     y = y,
-    //     backgroundColor = Color(248, 241, 235),
-    //     joystickColor = red500
-    // )
-    //
-    // moveInTime[Axes.X] = x.value / 15.0
-    // moveInTime[Axes.Y] = -y.value / 15.0
+    JoystickView(
+        modifier = modifier,
+        x = x,
+        y = y,
+        backgroundColor = Color(248, 241, 235),
+        joystickColor = red500
+    )
+
+    moveInTime[Axes.X] = x.value / 15.0
+    moveInTime[Axes.Y] = -y.value / 15.0
 }
 
 @Composable
