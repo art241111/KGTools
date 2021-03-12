@@ -10,5 +10,7 @@ rootProject.name = "KGTools"
 include ':app'
 include ':kconnectscreen'
 include ':SaveAndLoadInformation'
-include ':KControlSystem'
-include ':KControlSystem:JoystickComposeView'
+include ':kcontrolsystem:JoystickComposeView'
+include ':kcontrolsystem'
+
+
