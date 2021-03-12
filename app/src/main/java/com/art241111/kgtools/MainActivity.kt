@@ -1,5 +1,6 @@
 package com.art241111.kgtools
 
+import android.hardware.SensorManager
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -9,8 +10,15 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.art241111.kconnectscreen.data.Status
 import com.art241111.kconnectscreen.ui.KConnectScreen
+import com.art241111.kcontrolsystem.ControlVM
+import com.art241111.kcontrolsystem.ControlView
+import com.art241111.kcontrolsystem.ui.data.MoveInTime
+import com.art241111.kcontrolsystem.ui.data.Position
+import com.art241111.kcontrolsystem.ui.data.UIMoveByCoordinateKRobot
+import com.art241111.kcontrolsystem.ui.utils.TiltControl
 import com.art241111.kgtools.ui.theme.KGToolsTheme
 import com.art241111.saveandloadinformation.sharedPreferences.SharedPreferencesHelperForString
 
@@ -20,11 +28,16 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val helper = SharedPreferencesHelperForString(this, SHARED_PREFERENCES_NAME)
+
+        val sensor = applicationContext.getSystemService(SENSOR_SERVICE) as SensorManager
+        val tiltController = TiltControl(sensorManager = sensor)
+
         setContent {
             KGToolsTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting(helper)
+                    // ConnectScreen(helper)
+                    ControlView2(tiltController)
                 }
             }
         }
@@ -32,7 +45,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(helper: SharedPreferencesHelperForString) {
+fun ConnectScreen(helper: SharedPreferencesHelperForString) {
     val const_ip_name = "LOAD_IP"
     val context = LocalContext.current
     val ip = helper.load(const_ip_name, "192.168.31.63")
@@ -47,10 +60,15 @@ fun Greeting(helper: SharedPreferencesHelperForString) {
     )
 }
 
-// @Preview(showBackground = true)
-// @Composable
-// fun DefaultPreview() {
-//     KGToolsTheme {
-//         Greeting("Android")
-//     }
-// }
+@Composable
+fun ControlView2(tiltControl: TiltControl) {
+    val controlVM = viewModel<ControlVM>()
+
+    ControlView(
+        coordinate = mutableStateOf(Position()),
+        moveInTime = MoveInTime(move = { x, y, z, o, a, t -> }),
+        moveByCoordinate = UIMoveByCoordinateKRobot(mutableStateOf(Position())) {},
+        tiltControl = tiltControl,
+        controlVM = controlVM
+    )
+}
