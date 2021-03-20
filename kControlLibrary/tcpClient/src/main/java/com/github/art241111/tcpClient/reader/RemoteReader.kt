@@ -2,12 +2,12 @@ package com.github.art241111.tcpClient.reader
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
-import java.io.BufferedReader
 import java.lang.Exception
 import java.net.Socket
+import java.util.Scanner
 
 /**
  * This class creates a Reader that will listen to the
@@ -15,14 +15,14 @@ import java.net.Socket
  * @author Artem Gerasimov.
  */
 class RemoteReader : RemoteReaderImp {
-    private val incomingTextPrivate: MutableStateFlow<String> = MutableStateFlow("")
-    val incomingText: StateFlow<String> = incomingTextPrivate
+    private val _incomingText: MutableSharedFlow<String> = MutableSharedFlow()
+    val incomingText: SharedFlow<String> = _incomingText
 
     // A variable that displays whether our reader is working.
     private var isReading = false
 
     // Reader for receiving and reading incoming data from the server
-    private lateinit var reader: BufferedReader
+    private lateinit var reader: Scanner
 
     /**
      * Stop reading track.
@@ -42,21 +42,19 @@ class RemoteReader : RemoteReaderImp {
      * @param socket - the connection that you want to listen to.
      */
     override fun createReader(socket: Socket) {
-        reader = socket.getInputStream().bufferedReader()
+        reader = Scanner(socket.getInputStream())
         isReading = true
 
-        GlobalScope.launch {
+        GlobalScope.launch(Dispatchers.IO) {
             startTrackingInputString(reader)
         }
     }
 
-    private fun startTrackingInputString(reader: BufferedReader) {
+    private suspend fun startTrackingInputString(reader: Scanner) {
         while (isReading) {
             try {
-                if (reader.ready()) {
-                    val line = reader.readLine()
-                    incomingTextPrivate.value = line
-                }
+                val line = reader.nextLine()
+                _incomingText.emit(line)
             } catch (e: NullPointerException) {
 //                     Log.e("reader", "No elements come", e)
             } catch (e: Exception) {

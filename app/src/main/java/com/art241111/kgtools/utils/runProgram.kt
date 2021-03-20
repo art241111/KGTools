@@ -1,6 +1,11 @@
 package com.art241111.kgtools.utils
 
-import com.art241111.kgtools.data.*
+import com.art241111.kgtools.data.UICloseGripper
+import com.art241111.kgtools.data.UICommand
+import com.art241111.kgtools.data.UIMoveByAxes
+import com.art241111.kgtools.data.UIMoveNearby
+import com.art241111.kgtools.data.UIMoveToPoint
+import com.art241111.kgtools.data.UIOpenGripper
 import com.github.poluka.kControlLibrary.KRobot
 import com.github.poluka.kControlLibrary.actions.Command
 import com.github.poluka.kControlLibrary.actions.gripper.CloseGripper
@@ -8,7 +13,6 @@ import com.github.poluka.kControlLibrary.actions.gripper.OpenGripper
 import com.github.poluka.kControlLibrary.actions.move.DepartPoint
 import com.github.poluka.kControlLibrary.actions.move.MoveByCoordinate
 import com.github.poluka.kControlLibrary.actions.move.MoveToPoint
-import com.github.poluka.kControlLibrary.actions.move.moveByCoordinate
 import com.github.poluka.kControlLibrary.dsl.kProgram
 import com.github.poluka.kControlLibrary.enity.Axes
 import com.github.poluka.kControlLibrary.enity.TypeOfMovement
@@ -26,20 +30,13 @@ class RunProgram() {
     ) {
         isRun.value = true
 
-        val program = kProgram {
-            UICommands.forEach {
-                val command = migrateUICommandToKCommand(it, points)
-                command?.let { it1 -> this.add(it1) }
-            }
-
-            subProgram {
-                moveByCoordinate(Axes.X, 100.0)
-                moveByCoordinate(Axes.Y, -100.0)
-            }
-        }
-
         robot.run(
-            program
+            kProgram {
+                UICommands.forEach {
+                    val command = migrateUICommandToKCommand(it, points)
+                    command?.let { it1 -> this.add(it1) }
+                }
+            }
         )
 
         isRun.value = false
