@@ -5,7 +5,7 @@ import com.github.art241111.tcpClient.connection.Status
 import com.github.poluka.kControlLibrary.actions.Command
 import com.github.poluka.kControlLibrary.actions.annotation.ExecutedOnTheRobot
 import com.github.poluka.kControlLibrary.dsl.Program
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.RPosition
 import com.github.poluka.kControlLibrary.handlers.PositionHandler
 import com.github.poluka.kControlLibrary.sender.SenderForRobot
 import kotlinx.coroutines.CoroutineScope
@@ -25,7 +25,7 @@ class KRobot {
 
     private var isConnect = false
 
-    var homePosition = Position(0.0, 515.0, 242.0, 90.0, 180.0, 0.0)
+    var homePosition = RPosition(0.0, 515.0, 242.0, 90.0, 180.0, 0.0)
 
     fun run(@ExecutedOnTheRobot command: Command) {
         if (isConnect) {

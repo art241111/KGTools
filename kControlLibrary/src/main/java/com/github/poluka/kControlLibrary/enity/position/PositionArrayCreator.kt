@@ -2,7 +2,7 @@ package com.github.poluka.kControlLibrary.enity.position
 
 import com.github.poluka.kControlLibrary.enity.Axes
 
-fun Position.positionArrayFromString(text: String): Position {
+fun RPosition.positionArrayFromString(text: String): RPosition {
     // Очищаем ненужный текст
     val text2 = text.substringAfter(";").substringBeforeLast(";")
 

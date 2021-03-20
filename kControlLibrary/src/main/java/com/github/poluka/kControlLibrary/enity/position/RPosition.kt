@@ -6,7 +6,7 @@ import com.github.poluka.kControlLibrary.enity.Axes
  * Массив, который хранит позицию робота.
  * @author artem241120@gmail.com
  */
-class Position(
+class RPosition(
     x: Double = 0.0,
     y: Double = 0.0,
     z: Double = 0.0,
@@ -36,8 +36,8 @@ class Position(
      * Получаем доступ через координаты.
      * @param axes - координата, по которой нужно олучить значения.
      */
-    operator fun get(axes: Axes) =
-        position[axes.ordinal]
+    operator fun get(axes: Axes) = position[axes.ordinal]
+    operator fun get(axes: Int): Double = position[axes]
 
     /**
      * Изменяем значения через координаты.
@@ -46,5 +46,9 @@ class Position(
      */
     operator fun set(axes: Axes, value: Double) {
         position[axes.ordinal] = value
+    }
+
+    operator fun set(axes: Int, value: Double) {
+        position[axes] = value
     }
 }

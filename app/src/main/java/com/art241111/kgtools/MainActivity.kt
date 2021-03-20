@@ -13,8 +13,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.art241111.kconnectscreen.data.Status
 import com.art241111.kconnectscreen.ui.KConnectScreen
-import com.art241111.kcontrolsystem.data.ControlVM
 import com.art241111.kcontrolsystem.ControlView
+import com.art241111.kcontrolsystem.data.ControlVM
 import com.art241111.kcontrolsystem.data.MoveInTime
 import com.art241111.kcontrolsystem.data.UIMoveByCoordinateKRobot
 import com.art241111.kcontrolsystem.ui.utils.TiltControl

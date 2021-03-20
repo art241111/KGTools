@@ -5,8 +5,6 @@ package com.art241111.kcontrolsystem.data
  * @author artem241120@gmail.com
  */
 interface Position {
-    override fun toString(): String
-
     /**
      * Получаем доступ через координаты.
      * @param axes - координата, по которой нужно получить значения.
