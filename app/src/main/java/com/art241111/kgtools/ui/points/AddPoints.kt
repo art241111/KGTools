@@ -2,7 +2,13 @@ package com.art241111.kgtools.ui.points
 
 import android.content.Context
 import android.widget.Toast
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material.Button
 import androidx.compose.material.OutlinedTextField
@@ -24,7 +30,7 @@ import com.art241111.kgtools.R
 import com.art241111.kgtools.ui.RobotVM
 import com.art241111.kgtools.ui.elements.DefaultScreenBody
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
-import com.github.poluka.kControlLibrary.actions.move.MoveToPoint
+import com.github.poluka.kControlLibrary.actions.move.Move
 import com.github.poluka.kControlLibrary.enity.position.Position
 
 @Composable
@@ -137,7 +143,7 @@ fun AddPoint(
                     defaultButtonDistanceLong = robotVM.defaultButtonDistanceLong,
                     defaultButtonDistanceShort = robotVM.defaultButtonDistanceShort,
                     move = { x, y, z, o, a, t ->
-                        robotVM.robot.robot.run(MoveToPoint(Position(x, y, z, o, a, t)))
+                        robotVM.robot.robot.dangerousRun(Move(x, y, z, o, a, t))
                     }
                 ),
                 moveByCoordinate = UIMoveByCoordinateKRobot(coordinate) {},

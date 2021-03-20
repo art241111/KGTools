@@ -1,6 +1,5 @@
 package com.art241111.kcontrolsystem.data
 
-import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -83,7 +82,6 @@ class MoveInTime(
                         jobMoving.cancel()
                         this.cancel()
                     }
-                    Log.d("Job", jobMoving.children.joinToString())
                     delay(delaySending)
                 }
             }
@@ -93,7 +91,7 @@ class MoveInTime(
     /**
      * Остановка цикла отправки и обнуление массива перемещений
      */
-    fun stopMoving() {
+    private fun stopMoving() {
         isMoving = false
         moveDistance = Array(6) { 0.0 }
 

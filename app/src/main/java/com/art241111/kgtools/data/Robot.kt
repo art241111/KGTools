@@ -6,12 +6,15 @@ import com.github.art241111.tcpClient.connection.Status
 import com.github.poluka.kControlLibrary.KRobot
 import com.github.poluka.kControlLibrary.actions.move.MoveToPoint
 import com.github.poluka.kControlLibrary.enity.position.Position
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class Robot {
     val robot = KRobot()
-    // val moveInTime = MoveInTime(robot)
     var coordinate = robot.positionState
 
     private val job = SupervisorJob()
@@ -20,7 +23,8 @@ class Robot {
     val programState = robot.programState
 
     var connect = mutableStateOf(false)
-    var connectStatus = mutableStateOf(com.github.art241111.tcpClient.connection.Status.DISCONNECTED)
+    var connectStatus =
+        mutableStateOf(Status.DISCONNECTED)
 
     fun moveToPoint(position: Position) {
         robot.run(MoveToPoint(position = position))
