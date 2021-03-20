@@ -81,6 +81,7 @@ fun KConnectScreen(
             connectStatus = connectStatus.value,
             onConnect = { ip ->
                 onConnect(ip)
+                onBack()
                 imageVm.stopChangeImage()
             },
             onCancel = {

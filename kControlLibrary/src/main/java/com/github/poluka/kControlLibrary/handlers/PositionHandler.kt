@@ -1,6 +1,6 @@
 package com.github.poluka.kControlLibrary.handlers
 
-import com.github.poluka.kControlLibrary.enity.position.RPosition
+import com.github.poluka.kControlLibrary.enity.position.Position
 import com.github.poluka.kControlLibrary.enity.position.positionArrayFromString
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,7 +19,7 @@ class PositionHandler(
      * State the position that you want to monitor
      * to obtain information about the position.
      */
-    val positionState: MutableStateFlow<RPosition> = MutableStateFlow(RPosition())
+    val positionState: MutableStateFlow<Position> = MutableStateFlow(Position())
 
     private val job = SupervisorJob()
     private val scope = CoroutineScope(Dispatchers.IO + job) // Add handlers to Reader
@@ -52,8 +52,8 @@ class PositionHandler(
      * @return new position - when position change,
      * @return null - if old position.
      */
-    private fun positionParsing(position: String): RPosition? {
-        val newPosition = RPosition().positionArrayFromString(position)
+    private fun positionParsing(position: String): Position? {
+        val newPosition = Position().positionArrayFromString(position)
 
         return if (newPosition != positionState.value) {
             newPosition

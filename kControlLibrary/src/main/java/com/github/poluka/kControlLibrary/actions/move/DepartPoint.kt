@@ -5,11 +5,11 @@ import com.github.poluka.kControlLibrary.actions.annotation.ExecutedOnTheRobot
 import com.github.poluka.kControlLibrary.dsl.Program
 import com.github.poluka.kControlLibrary.enity.Axes
 import com.github.poluka.kControlLibrary.enity.TypeOfMovement
-import com.github.poluka.kControlLibrary.enity.position.RPosition
+import com.github.poluka.kControlLibrary.enity.position.Position
 
 @ExecutedOnTheRobot
 data class DepartPoint(
-    val position: RPosition,
+    val position: Position,
     val typeOfMovement: TypeOfMovement = TypeOfMovement.LMOVE,
     val angle: Double = 0.0,
     val dX: Double = 0.0,
@@ -20,7 +20,7 @@ data class DepartPoint(
     val dT: Double = 0.0
 ) : Command {
     override fun run(): String {
-        val newPosition = RPosition(
+        val newPosition = Position(
             x = position[Axes.X] + dX,
             y = position[Axes.Y] + dY,
             z = position[Axes.Z] + dZ,
@@ -33,7 +33,7 @@ data class DepartPoint(
 }
 
 fun Program.departPoint(
-    position: RPosition,
+    position: Position,
     typeOfMovement: TypeOfMovement = TypeOfMovement.LMOVE,
     dX: Double = 0.0,
     dY: Double = 0.0,

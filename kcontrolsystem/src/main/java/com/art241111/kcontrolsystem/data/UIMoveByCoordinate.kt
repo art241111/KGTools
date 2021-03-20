@@ -1,6 +1,7 @@
 package com.art241111.kcontrolsystem.data
 
 import androidx.compose.runtime.State
+import com.github.poluka.kControlLibrary.enity.position.Position
 
 interface UIMoveByCoordinate {
     fun moveByX(point: Double)
