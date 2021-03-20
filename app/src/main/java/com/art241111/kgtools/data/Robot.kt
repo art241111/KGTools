@@ -1,6 +1,7 @@
 package com.art241111.kgtools.data
 
 import android.util.Log
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import com.github.art241111.tcpClient.connection.Status
 import com.github.poluka.kControlLibrary.KRobot
@@ -23,8 +24,8 @@ class Robot {
     val programState = robot.programState
 
     var connect = mutableStateOf(false)
-    var connectStatus =
-        mutableStateOf(Status.DISCONNECTED)
+    private var _connectStatus = mutableStateOf(Status.DISCONNECTED)
+    var connectStatus: State<Status> = _connectStatus
 
     fun moveToPoint(position: Position) {
         robot.run(MoveToPoint(position = position))
@@ -37,7 +38,7 @@ class Robot {
         ip: String,
         port: Int = 49152
     ) {
-        if (connectStatus.value != Status.COMPLETED && connectStatus.value != Status.CONNECTING) {
+        if (_connectStatus.value != Status.COMPLETED && _connectStatus.value != Status.CONNECTING) {
             robot.connect(ip, port)
 
             if (!this::jobConnectStatus.isInitialized || !jobConnectStatus.isActive) {
@@ -56,7 +57,7 @@ class Robot {
 
                         if (status != null) {
                             Log.d("new_status", status.toString())
-                            connectStatus.value = status
+                            _connectStatus.value = status
                         }
                     }
                 }

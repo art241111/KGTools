@@ -36,9 +36,9 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.art241111.kconnectscreen.R
-import com.art241111.kconnectscreen.data.Status
 import com.art241111.kconnectscreen.ui.theme.TextHeader
 import com.art241111.kconnectscreen.ui.theme.verticalGradientBackground
+import com.github.art241111.tcpClient.connection.Status
 
 @Composable
 fun KConnectScreen(
@@ -81,7 +81,6 @@ fun KConnectScreen(
             connectStatus = connectStatus.value,
             onConnect = { ip ->
                 onConnect(ip)
-                onBack()
                 imageVm.stopChangeImage()
             },
             onCancel = {

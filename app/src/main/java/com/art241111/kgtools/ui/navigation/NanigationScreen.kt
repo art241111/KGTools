@@ -3,12 +3,10 @@ package com.art241111.kgtools.ui.navigation
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.art241111.kconnectscreen.data.Status
 import com.art241111.kconnectscreen.ui.KConnectScreen
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
 import com.art241111.kgtools.ui.RobotVM
@@ -110,7 +108,7 @@ fun MainNavigateScreen(
             KConnectScreen(
                 onBack = { mainNavigationVM.moveHome() },
                 onConnect = { ip -> robot.robot.connect(ip) },
-                connectStatus = mutableStateOf(Status.DISCONNECTED),
+                connectStatus = robot.robot.connectStatus,
                 onIpChange = { newIp ->
                     sharedPreferences.save(CONST_IP_NAME, newIp)
                 },
