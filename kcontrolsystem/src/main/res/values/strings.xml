@@ -2,4 +2,8 @@
 <resources>
     <!--    Control-->
     <string name="control_tint_mode">TINT MODE</string>
+
+    <string name="control_arrows">Arrows</string>
+    <string name="control_joystick">Joystick</string>
+    <string name="control_tint">Tint</string>
 </resources>

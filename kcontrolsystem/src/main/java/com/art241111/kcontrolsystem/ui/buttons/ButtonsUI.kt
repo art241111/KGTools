@@ -25,13 +25,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.art241111.kcontrolsystem.ControlVM
 import com.art241111.kcontrolsystem.R
-import com.art241111.kcontrolsystem.ui.data.Axes
-import com.art241111.kcontrolsystem.ui.data.MoveInTime
-import com.art241111.kcontrolsystem.ui.data.Position
-import com.art241111.kcontrolsystem.ui.data.UIMoveByCoordinate
+import com.art241111.kcontrolsystem.data.ControlVM
+import com.art241111.kcontrolsystem.data.MoveInTime
+import com.art241111.kcontrolsystem.data.Position
+import com.art241111.kcontrolsystem.data.UIMoveByCoordinate
 import com.art241111.kcontrolsystem.ui.theme.TextHeader
 import com.art241111.kcontrolsystem.ui.theme.red500
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
@@ -113,7 +113,7 @@ internal fun ButtonsView(
             verticalAlignment = Alignment.CenterVertically
         ) {
             IconButtonWithState(
-                text = "Arrows",
+                text = stringResource(id = R.string.control_arrows),
                 iconId = R.drawable.ic_baseline_joystick_24,
                 isActive = state.value == 0,
                 onClick = { state.value = 0 },
@@ -122,7 +122,7 @@ internal fun ButtonsView(
 
             Spacer(modifier = Modifier.width(10.dp))
             IconButtonWithState(
-                text = "Joystick",
+                text = stringResource(id = R.string.control_joystick),
                 iconId = R.drawable.ic_baseline_joystick_24,
                 isActive = state.value == 1,
                 onClick = { state.value = 1 },
@@ -131,7 +131,7 @@ internal fun ButtonsView(
 
             Spacer(modifier = Modifier.width(10.dp))
             IconButtonWithState(
-                text = "Tint",
+                text = stringResource(id = R.string.control_tint),
                 iconId = R.drawable.ic_baseline_joystick_24,
                 isActive = state.value == 2,
                 onClick = { state.value = 2 },
@@ -173,22 +173,22 @@ private fun SlowMoving(
     Spacer(Modifier.height(16.dp))
     TextButtons(
         editName = "X",
-        value = coordinate.value[Axes.X],
+        value = coordinate.value[0],
         enabled = enabled,
         onDecreaseButtonClick = PressOrRelease(
             {
-                moveInTime[Axes.X] = -moveInTime.defaultButtonDistanceShort
+                moveInTime[0] = -moveInTime.defaultButtonDistanceShort
             },
             {
-                moveInTime[Axes.X] = 0.0
+                moveInTime[0] = 0.0
             }
         ),
         onZoomButtonClick = PressOrRelease(
             {
-                moveInTime[Axes.X] = moveInTime.defaultButtonDistanceShort
+                moveInTime[0] = moveInTime.defaultButtonDistanceShort
             },
             {
-                moveInTime[Axes.X] = 0.0
+                moveInTime[0] = 0.0
             }
         )
     ) {
@@ -200,22 +200,22 @@ private fun SlowMoving(
     Spacer(Modifier.height(16.dp))
     TextButtons(
         editName = "Y",
-        value = coordinate.value[Axes.Y],
+        value = coordinate.value[1],
         enabled = enabled,
         onDecreaseButtonClick = PressOrRelease(
             {
-                moveInTime[Axes.Y] = -moveInTime.defaultButtonDistanceShort
+                moveInTime[1] = -moveInTime.defaultButtonDistanceShort
             },
             {
-                moveInTime[Axes.Y] = 0.0
+                moveInTime[1] = 0.0
             }
         ),
         onZoomButtonClick = PressOrRelease(
             {
-                moveInTime[Axes.Y] = moveInTime.defaultButtonDistanceShort
+                moveInTime[1] = moveInTime.defaultButtonDistanceShort
             },
             {
-                moveInTime[Axes.Y] = 0.0
+                moveInTime[1] = 0.0
             }
         )
     ) {
@@ -228,22 +228,22 @@ private fun SlowMoving(
 
     TextButtons(
         editName = "Z",
-        value = coordinate.value[Axes.Z],
+        value = coordinate.value[2],
         enabled = enabled,
         onDecreaseButtonClick = PressOrRelease(
             {
-                moveInTime[Axes.Z] = -moveInTime.defaultButtonDistanceShort
+                moveInTime[2] = -moveInTime.defaultButtonDistanceShort
             },
             {
-                moveInTime[Axes.Z] = 0.0
+                moveInTime[2] = 0.0
             }
         ),
         onZoomButtonClick = PressOrRelease(
             {
-                moveInTime[Axes.Z] = moveInTime.defaultButtonDistanceShort
+                moveInTime[2] = moveInTime.defaultButtonDistanceShort
             },
             {
-                moveInTime[Axes.Z] = 0.0
+                moveInTime[2] = 0.0
             }
         )
     ) {

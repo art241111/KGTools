@@ -1,4 +1,4 @@
-package com.art241111.kcontrolsystem
+package com.art241111.kcontrolsystem.data
 
 import androidx.lifecycle.ViewModel
 import com.art241111.kcontrolsystem.ui.utils.TiltControl

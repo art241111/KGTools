@@ -1,4 +1,4 @@
-package com.art241111.kcontrolsystem.ui.data
+package com.art241111.kcontrolsystem.data
 
 import android.util.Log
 import kotlinx.coroutines.CoroutineScope
@@ -35,18 +35,18 @@ class MoveInTime(
      * Получаем доступ через координаты.
      * @param axes - координата, по которой нужно олучить значения.
      */
-    operator fun get(axes: Axes) =
-        moveDistance[axes.ordinal]
+    operator fun get(axes: Int) =
+        moveDistance[axes]
 
     /**
      * Изменяем значения через координаты.
      * @param axes - координата, по которой нужно изменить значения,
      * @param value - значение, которое нужно установить.
      */
-    operator fun set(axes: Axes, value: Double) {
+    operator fun set(axes: Int, value: Double) {
 
-        if (value == -0.0) moveDistance[axes.ordinal] = 0.0
-        else moveDistance[axes.ordinal] = value
+        if (value == -0.0) moveDistance[axes] = 0.0
+        else moveDistance[axes] = value
 
         if (moveDistance.contentEquals(Array(6) { 0.0 })) {
             isMoving = false

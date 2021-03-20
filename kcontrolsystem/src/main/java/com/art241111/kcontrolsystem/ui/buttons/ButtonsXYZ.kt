@@ -18,9 +18,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.art241111.joystickcomposeview.JoystickView
 import com.art241111.kcontrolsystem.R
+import com.art241111.kcontrolsystem.data.MoveInTime
 import com.art241111.kcontrolsystem.ui.buttons.arrowButton.ArrowButton
-import com.art241111.kcontrolsystem.ui.data.Axes
-import com.art241111.kcontrolsystem.ui.data.MoveInTime
 import com.art241111.kcontrolsystem.ui.theme.red500
 
 /**
@@ -71,8 +70,8 @@ private fun JoystickControl(
         joystickColor = red500
     )
 
-    moveInTime[Axes.X] = x.value / 15.0
-    moveInTime[Axes.Y] = -y.value / 15.0
+    moveInTime[0] = x.value / 15.0
+    moveInTime[1] = -y.value / 15.0
 }
 
 @Composable
@@ -83,8 +82,8 @@ private fun ButtonsZ(
     Column(modifier = modifier) {
         // Z up
         ArrowButton(
-            onPressed = { moveInTime[Axes.Z] = moveInTime.defaultButtonDistanceLong },
-            onReleased = { moveInTime[Axes.Z] = 0.0 }
+            onPressed = { moveInTime[2] = moveInTime.defaultButtonDistanceLong },
+            onReleased = { moveInTime[2] = 0.0 }
         )
 
         Image(
@@ -98,8 +97,8 @@ private fun ButtonsZ(
 
         // Z down
         ArrowButton(
-            onPressed = { moveInTime[Axes.Z] = -moveInTime.defaultButtonDistanceLong },
-            onReleased = { moveInTime[Axes.Z] = 0.0 },
+            onPressed = { moveInTime[2] = -moveInTime.defaultButtonDistanceLong },
+            onReleased = { moveInTime[2] = 0.0 },
             degrees = 180f
         )
     }
@@ -120,8 +119,8 @@ private fun ButtonsXY(
 
         // Y up
         ArrowButton(
-            onPressed = { moveInTime[Axes.Y] = moveInTime.defaultButtonDistanceLong },
-            onReleased = { moveInTime[Axes.Y] = 0.0 }
+            onPressed = { moveInTime[1] = moveInTime.defaultButtonDistanceLong },
+            onReleased = { moveInTime[1] = 0.0 }
         )
 
         Row(
@@ -130,8 +129,8 @@ private fun ButtonsXY(
         ) {
             // X left
             ArrowButton(
-                onPressed = { moveInTime[Axes.X] = -moveInTime.defaultButtonDistanceLong },
-                onReleased = { moveInTime[Axes.X] = 0.0 },
+                onPressed = { moveInTime[0] = -moveInTime.defaultButtonDistanceLong },
+                onReleased = { moveInTime[0] = 0.0 },
                 degrees = -90f
             )
 
@@ -146,16 +145,16 @@ private fun ButtonsXY(
 
             // X right
             ArrowButton(
-                onPressed = { moveInTime[Axes.X] = moveInTime.defaultButtonDistanceLong },
-                onReleased = { moveInTime[Axes.X] = 0.0 },
+                onPressed = { moveInTime[0] = moveInTime.defaultButtonDistanceLong },
+                onReleased = { moveInTime[0] = 0.0 },
                 degrees = 90f
             )
         }
 
         // Y down
         ArrowButton(
-            onPressed = { moveInTime[Axes.Y] = -moveInTime.defaultButtonDistanceLong },
-            onReleased = { moveInTime[Axes.Y] = 0.0 },
+            onPressed = { moveInTime[1] = -moveInTime.defaultButtonDistanceLong },
+            onReleased = { moveInTime[1] = 0.0 },
             degrees = 180f
         )
     }

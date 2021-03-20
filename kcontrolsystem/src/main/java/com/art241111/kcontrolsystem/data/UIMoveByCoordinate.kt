@@ -1,4 +1,4 @@
-package com.art241111.kcontrolsystem.ui.data
+package com.art241111.kcontrolsystem.data
 
 import androidx.compose.runtime.State
 
@@ -16,30 +16,30 @@ class UIMoveByCoordinateKRobot(
     private val move: (position: Position) -> Unit
 ) : UIMoveByCoordinate {
     override fun moveByX(point: Double) {
-        moveByCoordinate(Axes.X, point)
+        moveByCoordinate(0, point)
     }
 
     override fun moveByY(point: Double) {
-        moveByCoordinate(Axes.Y, point)
+        moveByCoordinate(1, point)
     }
 
     override fun moveByZ(point: Double) {
-        moveByCoordinate(Axes.Z, point)
+        moveByCoordinate(2, point)
     }
 
     override fun moveByO(point: Double) {
-        moveByCoordinate(Axes.O, point)
+        moveByCoordinate(3, point)
     }
 
     override fun moveByA(point: Double) {
-        moveByCoordinate(Axes.A, point)
+        moveByCoordinate(4, point)
     }
 
     override fun moveByT(point: Double) {
-        moveByCoordinate(Axes.T, point)
+        moveByCoordinate(5, point)
     }
 
-    private fun moveByCoordinate(axes: Axes, point: Double) {
+    private fun moveByCoordinate(axes: Int, point: Double) {
         val position = positionState.value
         position[axes] = point
 

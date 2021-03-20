@@ -13,12 +13,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.art241111.kconnectscreen.data.Status
 import com.art241111.kconnectscreen.ui.KConnectScreen
-import com.art241111.kcontrolsystem.ControlVM
+import com.art241111.kcontrolsystem.data.ControlVM
 import com.art241111.kcontrolsystem.ControlView
-import com.art241111.kcontrolsystem.ui.data.MoveInTime
-import com.art241111.kcontrolsystem.ui.data.Position
-import com.art241111.kcontrolsystem.ui.data.UIMoveByCoordinateKRobot
+import com.art241111.kcontrolsystem.data.MoveInTime
+import com.art241111.kcontrolsystem.data.UIMoveByCoordinateKRobot
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
+import com.art241111.kgtools.data.PositionImp
 import com.art241111.kgtools.ui.theme.KGToolsTheme
 import com.art241111.saveandloadinformation.sharedPreferences.SharedPreferencesHelperForString
 
@@ -65,9 +65,9 @@ fun ControlView2(tiltControl: TiltControl) {
     val controlVM = viewModel<ControlVM>()
 
     ControlView(
-        coordinate = mutableStateOf(Position()),
+        coordinate = mutableStateOf(PositionImp()),
         moveInTime = MoveInTime(move = { x, y, z, o, a, t -> }),
-        moveByCoordinate = UIMoveByCoordinateKRobot(mutableStateOf(Position())) {},
+        moveByCoordinate = UIMoveByCoordinateKRobot(mutableStateOf(PositionImp())) {},
         tiltControl = tiltControl,
         controlVM = controlVM
     )

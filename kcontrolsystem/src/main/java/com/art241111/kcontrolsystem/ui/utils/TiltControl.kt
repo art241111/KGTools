@@ -5,8 +5,7 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.util.Log
-import com.art241111.kcontrolsystem.ui.data.Axes
-import com.art241111.kcontrolsystem.ui.data.MoveInTime
+import com.art241111.kcontrolsystem.data.MoveInTime
 
 class TiltControl(private val sensorManager: SensorManager) {
     lateinit var moveInTime: MoveInTime
@@ -35,8 +34,8 @@ class TiltControl(private val sensorManager: SensorManager) {
     fun stopTracking() {
         if (sensor != null && this::listener.isInitialized) {
             sensorManager.unregisterListener(listener, sensor)
-            moveInTime[Axes.X] = 0.0
-            moveInTime[Axes.Y] = 0.0
+            moveInTime[0] = 0.0
+            moveInTime[1] = 0.0
         } else {
             Log.e("sensor", "Sensor not detected")
         }
@@ -46,8 +45,8 @@ class TiltControl(private val sensorManager: SensorManager) {
         override fun onSensorChanged(event: SensorEvent?) {
             if (moveInTime != null) {
                 if (event != null) {
-                    moveInTime[Axes.X] = -1 * event.values[0].toDouble()
-                    moveInTime[Axes.Y] = -1 * event.values[1].toDouble()
+                    moveInTime[0] = -1 * event.values[0].toDouble()
+                    moveInTime[1] = -1 * event.values[1].toDouble()
                     Log.d(
                         "sensor",
                         "${-1 * event.values[0].toDouble()}: ${-1 * event.values[1].toDouble()}"
