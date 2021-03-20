@@ -12,5 +12,7 @@ include ':kconnectscreen'
 include ':SaveAndLoadInformation'
 include ':kcontrolsystem:JoystickComposeView'
 include ':kcontrolsystem'
+include ':kControlLibrary'
+include ':kControlLibrary:tcpClient'
 
 
