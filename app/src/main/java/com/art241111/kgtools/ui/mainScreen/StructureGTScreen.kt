@@ -16,7 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.art241111.kcontrolsystem.ui.theme.red500
 import com.art241111.kgtools.R
-import com.art241111.kgtools.data.RobotVM
+import com.art241111.kgtools.data.robot.RobotVM
 import com.art241111.kgtools.ui.navigation.MainNavigationVM
 import com.art241111.kgtools.ui.views.DefaultScreenBody
 

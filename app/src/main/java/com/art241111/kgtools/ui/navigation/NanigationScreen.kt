@@ -9,7 +9,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.art241111.kconnectscreen.ui.KConnectScreen
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
-import com.art241111.kgtools.data.RobotVM
+import com.art241111.kgtools.data.robot.RobotVM
 import com.art241111.kgtools.ui.commands.NavigateProgramsScreen
 import com.art241111.kgtools.ui.mainScreen.MainScreenNavigationVM
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM

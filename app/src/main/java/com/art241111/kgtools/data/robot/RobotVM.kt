@@ -1,4 +1,4 @@
-package com.art241111.kgtools.data
+package com.art241111.kgtools.data.robot
 
 import androidx.compose.runtime.State
 import androidx.lifecycle.ViewModel
@@ -6,8 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.art241111.kcontrolsystem.data.DELAY_SEND_SP
 import com.art241111.kcontrolsystem.data.LONG_MOVE_SP
 import com.art241111.kcontrolsystem.data.SHORT_MOVE_SP
-import com.art241111.kgtools.data.robot.ConnectRobot
-import com.art241111.kgtools.data.robot.RunRobotProgram
+import com.art241111.kgtools.data.uiCommands.UICommand
 import com.art241111.saveandloadinformation.sharedPreferences.SharedPreferencesHelperForString
 import com.github.poluka.kControlLibrary.KRobot
 import com.github.poluka.kControlLibrary.actions.Command
@@ -16,6 +15,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+/**
+ * Linking the UI to a live robot.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 class RobotVM : ViewModel() {
     var defaultButtonDistanceShort: Double = 10.0
     var defaultButtonDistanceLong: Double = 10.0

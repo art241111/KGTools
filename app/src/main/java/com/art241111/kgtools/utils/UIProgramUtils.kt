@@ -2,7 +2,14 @@ package com.art241111.kgtools.utils
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
-import com.art241111.kgtools.data.*
+import com.art241111.kgtools.data.uiCommands.Gripper
+import com.art241111.kgtools.data.uiCommands.UICloseGripper
+import com.art241111.kgtools.data.uiCommands.UICommand
+import com.art241111.kgtools.data.uiCommands.UIMoveByAxes
+import com.art241111.kgtools.data.uiCommands.UIMoveNearby
+import com.art241111.kgtools.data.uiCommands.UIMoveToPoint
+import com.art241111.kgtools.data.uiCommands.UIOpenGripper
+import com.art241111.kgtools.data.uiCommands.UIWaitSignal
 import com.github.poluka.kControlLibrary.enity.Axes
 import com.github.poluka.kControlLibrary.enity.TypeOfMovement
 import com.github.poluka.kControlLibrary.enity.position.Position

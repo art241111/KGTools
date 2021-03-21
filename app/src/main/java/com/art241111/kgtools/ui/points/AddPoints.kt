@@ -27,7 +27,7 @@ import com.art241111.kcontrolsystem.data.MoveInTime
 import com.art241111.kcontrolsystem.data.UIMoveByCoordinateKRobot
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
 import com.art241111.kgtools.R
-import com.art241111.kgtools.data.RobotVM
+import com.art241111.kgtools.data.robot.RobotVM
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 import com.art241111.kgtools.ui.views.DefaultScreenBody
 import com.github.poluka.kControlLibrary.actions.move.Move

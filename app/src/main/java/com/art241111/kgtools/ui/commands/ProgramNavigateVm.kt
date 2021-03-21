@@ -3,7 +3,11 @@ package com.art241111.kgtools.ui.commands
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.art241111.kgtools.data.*
+import com.art241111.kgtools.data.uiCommands.UICommand
+import com.art241111.kgtools.data.uiCommands.UIMoveByAxes
+import com.art241111.kgtools.data.uiCommands.UIMoveNearby
+import com.art241111.kgtools.data.uiCommands.UIMoveToPoint
+import com.art241111.kgtools.data.uiCommands.UIWaitSignal
 import com.art241111.kgtools.ui.navigation.AppState
 import com.art241111.kgtools.ui.navigation.NavigationViewModel
 

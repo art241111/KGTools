@@ -1,7 +1,13 @@
 package com.art241111.kgtools.ui.commands
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.runtime.Composable
@@ -12,10 +18,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.art241111.kgtools.R
-import com.art241111.kgtools.data.UIMoveToPoint
+import com.art241111.kgtools.data.uiCommands.UIMoveToPoint
 import com.art241111.kgtools.ui.card.ProgramItemCard
-import com.art241111.kgtools.ui.views.TextHeader
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
+import com.art241111.kgtools.ui.views.TextHeader
 
 @Composable
 internal fun ShowCommands(
@@ -38,7 +44,7 @@ internal fun ShowCommands(
                     ProgramItemCard(
                         index = index,
                         programText = item.toComposableString(),
-                        image = item.image,
+                        image = item.getImage(),
                         onDeleteButton = {
                             viewModel.deleteProgram(index)
                         },

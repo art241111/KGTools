@@ -30,7 +30,7 @@ import com.art241111.kcontrolsystem.data.DELAY_SEND_SP
 import com.art241111.kcontrolsystem.data.LONG_MOVE_SP
 import com.art241111.kcontrolsystem.data.SHORT_MOVE_SP
 import com.art241111.kgtools.R
-import com.art241111.kgtools.data.RobotVM
+import com.art241111.kgtools.data.robot.RobotVM
 import com.art241111.kgtools.ui.views.TextHeader
 import com.art241111.kgtools.ui.views.verticalGradientBackground
 import com.art241111.saveandloadinformation.sharedPreferences.SharedPreferencesHelperForString

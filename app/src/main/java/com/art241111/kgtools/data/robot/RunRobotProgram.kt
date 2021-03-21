@@ -1,7 +1,6 @@
 package com.art241111.kgtools.data.robot
 
-import com.art241111.kgtools.data.UICommand
-import com.art241111.kgtools.utils.migrateUICommandToKCommand
+import com.art241111.kgtools.data.uiCommands.UICommand
 import com.github.poluka.kControlLibrary.KRobot
 import com.github.poluka.kControlLibrary.actions.move.MoveToPoint
 import com.github.poluka.kControlLibrary.dsl.kProgram
@@ -34,7 +33,7 @@ class RunRobotProgram(private val robot: KRobot) {
         robot.run(
             kProgram {
                 UICommands.forEach {
-                    val command = migrateUICommandToKCommand(it, points)
+                    val command = it.getCommand(points)
                     command?.let { it1 -> this.add(it1) }
                 }
             }

@@ -1,6 +1,10 @@
 package com.art241111.kgtools.ui.commands.commandScreens
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
@@ -13,7 +17,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.art241111.kgtools.R
-import com.art241111.kgtools.data.UIWaitSignal
+import com.art241111.kgtools.data.uiCommands.UIWaitSignal
 import com.art241111.kgtools.ui.commands.ProgramNavigateVm
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 

@@ -1,14 +1,21 @@
 package com.art241111.kgtools.ui.commands
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.art241111.kgtools.data.*
+import com.art241111.kgtools.data.uiCommands.UICommand
+import com.art241111.kgtools.data.uiCommands.UIMoveByAxes
+import com.art241111.kgtools.data.uiCommands.UIMoveNearby
+import com.art241111.kgtools.data.uiCommands.UIMoveToPoint
+import com.art241111.kgtools.data.uiCommands.UIWaitSignal
 import com.art241111.kgtools.ui.commands.commandScreens.ShowHome
 import com.art241111.kgtools.ui.commands.commandScreens.ShowMoveByAxes
 import com.art241111.kgtools.ui.commands.commandScreens.ShowMoveNearby

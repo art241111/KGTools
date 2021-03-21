@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.art241111.kgtools.R
-import com.art241111.kgtools.data.UICloseGripper
-import com.art241111.kgtools.data.UIOpenGripper
+import com.art241111.kgtools.data.uiCommands.UICloseGripper
+import com.art241111.kgtools.data.uiCommands.UIOpenGripper
 import com.art241111.kgtools.ui.commands.ProgramNavigateVm
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 

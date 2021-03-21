@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.art241111.kgtools.data.UICommand
+import com.art241111.kgtools.data.uiCommands.UICommand
 import com.art241111.kgtools.utils.UIProgramUtils
 import com.github.poluka.kControlLibrary.enity.position.Position
 
