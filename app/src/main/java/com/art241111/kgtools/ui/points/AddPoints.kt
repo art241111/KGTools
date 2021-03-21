@@ -27,9 +27,9 @@ import com.art241111.kcontrolsystem.data.MoveInTime
 import com.art241111.kcontrolsystem.data.UIMoveByCoordinateKRobot
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
 import com.art241111.kgtools.R
-import com.art241111.kgtools.ui.RobotVM
-import com.art241111.kgtools.ui.views.DefaultScreenBody
+import com.art241111.kgtools.data.RobotVM
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
+import com.art241111.kgtools.ui.views.DefaultScreenBody
 import com.github.poluka.kControlLibrary.actions.move.Move
 import com.github.poluka.kControlLibrary.enity.position.Position
 
@@ -50,7 +50,7 @@ fun AddPoint(
     if (pointVM.pointNameUpgrade != null) {
         pointIndex = pointVM.pointNameUpgrade!!
         pointName = pointVM.getPointsName().value!![pointIndex]
-        robotVM.robot.moveToPoint(pointVM.getPoints().value?.get(pointName)!!)
+        robotVM.moveToPoint(pointVM.getPoints().value?.get(pointName)!!)
 
         pointVM.pointNameUpgrade = null
     }
@@ -143,7 +143,7 @@ fun AddPoint(
                     defaultButtonDistanceLong = robotVM.defaultButtonDistanceLong,
                     defaultButtonDistanceShort = robotVM.defaultButtonDistanceShort,
                     move = { x, y, z, o, a, t ->
-                        robotVM.robot.robot.dangerousRun(Move(x, y, z, o, a, t))
+                        robotVM.dangerousRun(Move(x, y, z, o, a, t))
                     }
                 ),
                 moveByCoordinate = UIMoveByCoordinateKRobot(coordinate) {},

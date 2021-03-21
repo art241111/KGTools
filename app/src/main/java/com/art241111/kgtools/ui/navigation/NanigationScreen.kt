@@ -9,7 +9,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.art241111.kconnectscreen.ui.KConnectScreen
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
-import com.art241111.kgtools.ui.RobotVM
+import com.art241111.kgtools.data.RobotVM
 import com.art241111.kgtools.ui.commands.NavigateProgramsScreen
 import com.art241111.kgtools.ui.mainScreen.MainScreenNavigationVM
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
@@ -114,8 +114,8 @@ fun MainNavigateScreen(
             val defaultIp = sharedPreferences.load(CONST_IP_NAME, "192.168.31.63")
             KConnectScreen(
                 onBack = { mainNavigationVM.moveHome() },
-                onConnect = { ip -> robot.robot.connect(ip) },
-                connectStatus = robot.robot.connectStatus,
+                onConnect = { ip -> robot.connect(ip) },
+                connectStatus = robot.connectStatus,
                 onIpChange = { newIp ->
                     sharedPreferences.save(CONST_IP_NAME, newIp)
                 },

@@ -12,7 +12,7 @@ import java.net.SocketTimeoutException
 class Connection {
     var socket = Socket()
 
-    val statusState: MutableStateFlow<Status?> = MutableStateFlow(null)
+    val statusState: MutableStateFlow<Status?> = MutableStateFlow(Status.DISCONNECTED)
 
     /**
      * Disconnect from server.
