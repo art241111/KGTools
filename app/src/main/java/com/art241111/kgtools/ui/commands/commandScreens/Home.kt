@@ -15,6 +15,11 @@ import com.art241111.kgtools.data.uiCommands.UIOpenGripper
 import com.art241111.kgtools.ui.commands.ProgramNavigateVm
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 
+/**
+ * Screen for adding a home command.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 @Composable
 internal fun ShowHome(
     programAndPointsVM: ProgramAndPointsVM,

@@ -20,6 +20,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.art241111.kgtools.R
 
+/**
+ * A card shell with a cross on the top right and an index on the bottom right.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 @Composable
 internal fun CardWithCloseButtonAndIndex(
     modifier: Modifier = Modifier,

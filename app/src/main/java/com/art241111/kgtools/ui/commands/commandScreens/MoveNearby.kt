@@ -25,6 +25,11 @@ import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 import com.art241111.kgtools.ui.views.Spinner
 import com.github.poluka.kControlLibrary.enity.Axes
 
+/**
+ * Screen for adding a move nearby command.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 @Composable
 internal fun ShowMoveNearby(
     programAndPointsVM: ProgramAndPointsVM,
@@ -78,66 +83,36 @@ internal fun ShowMoveNearby(
     var distance by remember { mutableStateOf(defaultDistance) } // initial value
     var angle by remember { mutableStateOf(defaultAngle) } // initial value
 
-    Spacer(modifier = Modifier.height(10.dp))
-    OutlinedTextField(
-        modifier = Modifier
-            .wrapContentHeight()
-            .fillMaxWidth()
-            .padding(horizontal = 40.dp),
+    CommandOutlinedTextField(
         value = distance,
         onValueChange = { distance = it },
-        label = { Text(text = stringResource(id = R.string.command_distance)) },
-        singleLine = true,
-        keyboardOptions = KeyboardOptions(
-            autoCorrect = false,
-            keyboardType = KeyboardType.Number,
-            imeAction = ImeAction.Done,
-        ),
-        keyboardActions = KeyboardActions(
-            onDone = {
-                defaultKeyboardAction(ImeAction.Done)
-
-                addCommand(
-                    programAndPointsVM = programAndPointsVM,
-                    textAxes = textAxes,
-                    pointName = textPointsName,
-                    distance = distance,
-                    closeProgramMenu = closeProgramMenu,
-                    angle = angle
-                )
-            }
-        )
+        label = R.string.command_distance,
+        onDone = {
+            addCommand(
+                programAndPointsVM = programAndPointsVM,
+                textAxes = textAxes,
+                pointName = textPointsName,
+                distance = distance,
+                closeProgramMenu = closeProgramMenu,
+                angle = angle
+            )
+        }
     )
 
-    Spacer(modifier = Modifier.height(10.dp))
-    OutlinedTextField(
-        modifier = Modifier
-            .wrapContentHeight()
-            .fillMaxWidth()
-            .padding(horizontal = 40.dp),
+    CommandOutlinedTextField(
         value = angle,
         onValueChange = { angle = it },
-        label = { Text(text = stringResource(id = R.string.command_angle)) },
-        singleLine = true,
-        keyboardOptions = KeyboardOptions(
-            autoCorrect = false,
-            keyboardType = KeyboardType.Number,
-            imeAction = ImeAction.Done,
-        ),
-        keyboardActions = KeyboardActions(
-            onDone = {
-                defaultKeyboardAction(ImeAction.Done)
-
-                addCommand(
-                    programAndPointsVM = programAndPointsVM,
-                    textAxes = textAxes,
-                    distance = distance,
-                    angle = angle,
-                    pointName = textPointsName,
-                    closeProgramMenu = closeProgramMenu
-                )
-            }
-        )
+        label = R.string.command_angle,
+        onDone = {
+            addCommand(
+                programAndPointsVM = programAndPointsVM,
+                textAxes = textAxes,
+                distance = distance,
+                angle = angle,
+                pointName = textPointsName,
+                closeProgramMenu = closeProgramMenu
+            )
+        }
     )
 
     Spacer(modifier = Modifier.height(10.dp))

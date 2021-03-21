@@ -18,6 +18,8 @@ import com.art241111.kgtools.ui.points.ShowPoints
 import com.art241111.kgtools.ui.views.TabButton
 
 /**
+ * The main screen, where the screens with all the points and commands are displayed.
+ *
  * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
  */
 

@@ -24,6 +24,11 @@ import com.art241111.kgtools.ui.commands.commandScreens.WaitSignal
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 import com.art241111.kgtools.ui.navigation.NavigationViewModel
 
+/**
+ * The screen where the screens associated with the commands are redrawn.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 @Composable
 internal fun NavigateProgramsScreen(
     modifier: Modifier = Modifier,
@@ -57,7 +62,6 @@ internal fun NavigateProgramsScreen(
                         programNavigateVm,
                         editUICommand as UIMoveByAxes?,
                         closeProgramMenu = {
-//                            programNavigateVm.moveHome()
                             closeProgramMenu()
                         }
                     )

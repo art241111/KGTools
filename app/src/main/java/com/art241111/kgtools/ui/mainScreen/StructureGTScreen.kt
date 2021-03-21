@@ -23,7 +23,7 @@ import com.art241111.kgtools.ui.views.DefaultScreenBody
 /**
  * The structure of the main screen with a bottom bar that has a floating action bar.
  *
- * Создается из [MainNavigateScreen]
+ * Created from [MainNavigateScreen]
  */
 
 @Composable

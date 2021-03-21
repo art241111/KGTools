@@ -18,6 +18,11 @@ import androidx.compose.ui.unit.dp
 import com.art241111.kgtools.R
 import com.art241111.kgtools.ui.views.StartBoldEndNormalText
 
+/**
+ * Card for displaying programs.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 @Composable
 internal fun ProgramItemCard(
     modifier: Modifier = Modifier,

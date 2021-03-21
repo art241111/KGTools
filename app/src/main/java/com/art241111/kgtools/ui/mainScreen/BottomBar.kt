@@ -19,6 +19,8 @@ import com.art241111.kgtools.data.robot.RobotVM
 import com.art241111.kgtools.ui.navigation.MainNavigationVM
 
 /**
+ * BottomBar for the main screen with start, connect buttons.
+ *
  * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
  */
 

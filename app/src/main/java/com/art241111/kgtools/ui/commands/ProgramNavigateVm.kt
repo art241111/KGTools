@@ -12,12 +12,19 @@ import com.art241111.kgtools.ui.navigation.AppState
 import com.art241111.kgtools.ui.navigation.NavigationViewModel
 
 /**
- * Данный enum класс содержит дополнительные экраны, которые нам надо перерисовать.
+ * This enum class contains a list of screens with commands that we need to redraw.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
  */
 enum class StateProgram : AppState {
     Home, MoveToPoint, MoveByAxis, MoveNearby, WaitSignal
 }
 
+/**
+ * A class for navigating through commands.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 class ProgramNavigateVm : ViewModel() {
     private lateinit var navigation: NavigationViewModel
     fun setNavigation(

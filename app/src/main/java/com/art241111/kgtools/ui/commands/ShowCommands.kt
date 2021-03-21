@@ -23,6 +23,11 @@ import com.art241111.kgtools.ui.card.ProgramItemCard
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 import com.art241111.kgtools.ui.views.TextHeader
 
+/**
+ * Displaying a list of commands.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 @Composable
 internal fun ShowCommands(
     modifier: Modifier = Modifier,

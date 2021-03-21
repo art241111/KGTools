@@ -20,6 +20,11 @@ import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 import com.art241111.kgtools.ui.views.Spinner
 import com.github.poluka.kControlLibrary.enity.TypeOfMovement
 
+/**
+ * Screen for adding a move to point command.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 @Composable
 internal fun ShowMoveToPoint(
     programAndPointsVM: ProgramAndPointsVM,
