@@ -11,7 +11,7 @@ import com.art241111.kconnectscreen.ui.KConnectScreen
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
 import com.art241111.kgtools.ui.RobotVM
 import com.art241111.kgtools.ui.commands.NavigateProgramsScreen
-import com.art241111.kgtools.ui.elements.DefaultScreenBody
+import com.art241111.kgtools.ui.views.DefaultScreenBody
 import com.art241111.kgtools.ui.mainScreen.MainScreenNavigationVM
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsWithBottomBar

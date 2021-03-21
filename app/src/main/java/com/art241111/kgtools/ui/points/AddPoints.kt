@@ -28,7 +28,7 @@ import com.art241111.kcontrolsystem.data.UIMoveByCoordinateKRobot
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
 import com.art241111.kgtools.R
 import com.art241111.kgtools.ui.RobotVM
-import com.art241111.kgtools.ui.elements.DefaultScreenBody
+import com.art241111.kgtools.ui.views.DefaultScreenBody
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 import com.github.poluka.kControlLibrary.actions.move.Move
 import com.github.poluka.kControlLibrary.enity.position.Position

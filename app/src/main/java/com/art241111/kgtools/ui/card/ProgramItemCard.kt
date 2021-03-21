@@ -16,7 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.art241111.kgtools.R
-import com.art241111.kgtools.ui.elements.StartBoldEndNormalText
+import com.art241111.kgtools.ui.views.StartBoldEndNormalText
 
 @Composable
 internal fun ProgramItemCard(

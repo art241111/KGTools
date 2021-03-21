@@ -1,4 +1,4 @@
-package com.art241111.kgtools.ui.elements
+package com.art241111.kgtools.ui.views
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache

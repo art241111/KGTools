@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.art241111.kgtools.R
 import com.art241111.kgtools.data.UIMoveToPoint
 import com.art241111.kgtools.ui.card.ProgramItemCard
-import com.art241111.kgtools.ui.elements.TextHeader
+import com.art241111.kgtools.ui.views.TextHeader
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 
 @Composable

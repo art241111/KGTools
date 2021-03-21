@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.art241111.kgtools.R
-import com.art241111.kgtools.ui.elements.StartBoldEndNormalText
+import com.art241111.kgtools.ui.views.StartBoldEndNormalText
 
 @Composable
 internal fun PointItemCard(

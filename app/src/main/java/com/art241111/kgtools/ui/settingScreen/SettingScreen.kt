@@ -31,8 +31,8 @@ import com.art241111.kcontrolsystem.data.LONG_MOVE_SP
 import com.art241111.kcontrolsystem.data.SHORT_MOVE_SP
 import com.art241111.kgtools.R
 import com.art241111.kgtools.ui.RobotVM
-import com.art241111.kgtools.ui.elements.TextHeader
-import com.art241111.kgtools.ui.elements.verticalGradientBackground
+import com.art241111.kgtools.ui.views.TextHeader
+import com.art241111.kgtools.ui.views.verticalGradientBackground
 import com.art241111.saveandloadinformation.sharedPreferences.SharedPreferencesHelperForString
 
 @Composable

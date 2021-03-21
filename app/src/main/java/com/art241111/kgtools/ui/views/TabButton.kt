@@ -1,4 +1,4 @@
-package com.art241111.kgtools.ui.elements
+package com.art241111.kgtools.ui.views
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding

@@ -18,7 +18,7 @@ import com.art241111.kgtools.R
 import com.art241111.kgtools.data.UIMoveNearby
 import com.art241111.kgtools.ui.commands.ProgramNavigateVm
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
-import com.art241111.kgtools.ui.elements.Spinner
+import com.art241111.kgtools.ui.views.Spinner
 import com.github.poluka.kControlLibrary.enity.Axes
 
 @Composable

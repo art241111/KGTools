@@ -14,8 +14,8 @@ import com.art241111.kcontrolsystem.ui.theme.red700
 import com.art241111.kgtools.R
 import com.art241111.kgtools.ui.RobotVM
 import com.art241111.kgtools.ui.commands.ShowCommands
-import com.art241111.kgtools.ui.elements.DefaultScreenBody
-import com.art241111.kgtools.ui.elements.TabButton
+import com.art241111.kgtools.ui.views.DefaultScreenBody
+import com.art241111.kgtools.ui.views.TabButton
 import com.art241111.kgtools.ui.points.ShowPoints
 import com.art241111.kgtools.ui.navigation.MainNavigationVM
 import com.art241111.kgtools.utils.RunProgram
