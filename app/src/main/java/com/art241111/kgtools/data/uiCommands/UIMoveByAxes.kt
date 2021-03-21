@@ -9,6 +9,8 @@ import com.github.poluka.kControlLibrary.enity.Axes
 import com.github.poluka.kControlLibrary.enity.position.Position
 
 /**
+ * Command for moving along axes.
+ *
  * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
  */
 
@@ -26,6 +28,7 @@ class UIMoveByAxes(
     override fun getCommand(points: MutableMap<String, Position>): Command {
         return MoveByCoordinate(axes, distance.toDouble())
     }
+
     override fun getImage(): Int = R.drawable.icon_move_by_coordinate
     override fun getProgramName(): Int = R.string.command_move_by_axes
 

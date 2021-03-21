@@ -9,6 +9,8 @@ import com.github.poluka.kControlLibrary.enity.TypeOfMovement
 import com.github.poluka.kControlLibrary.enity.position.Position
 
 /**
+ * Command to move to a point.
+ *
  * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
  */
 

@@ -9,6 +9,8 @@ import com.github.poluka.kControlLibrary.actions.gripper.OpenGripper
 import com.github.poluka.kControlLibrary.enity.position.Position
 
 /**
+ * Commands for gripper.
+ *
  * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
  */
 
