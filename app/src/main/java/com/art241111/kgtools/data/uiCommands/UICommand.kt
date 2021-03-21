@@ -28,7 +28,7 @@ interface UICommand {
     fun getImage(): Int
 
     /**
-     * Returns the program name
+     * Returns the program name.
      */
     fun getProgramName(): Int
 }
