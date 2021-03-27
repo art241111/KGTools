@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.art241111.kgtools.data.uiCommands.UICommand
 import com.art241111.kgtools.utils.UIProgramUtils
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 class ProgramAndPointsVM : ViewModel() {
     lateinit var updatePoint: () -> Unit
@@ -20,8 +20,8 @@ class ProgramAndPointsVM : ViewModel() {
     private val pointsName: LiveData<MutableList<String>> = MutableLiveData(arrayListOf())
     fun getPointsName(): LiveData<MutableList<String>> = pointsName
 
-    private val points: LiveData<MutableMap<String, Position>> = MutableLiveData(mutableMapOf())
-    fun getPoints(): LiveData<MutableMap<String, Position>> = points
+    private val points: LiveData<MutableMap<String, Point>> = MutableLiveData(mutableMapOf())
+    fun getPoints(): LiveData<MutableMap<String, Point>> = points
 
     private val uiCommands: MutableList<UICommand> = arrayListOf()
     private val commandsLiveData = MutableLiveData<List<UICommand>>()
@@ -54,7 +54,7 @@ class ProgramAndPointsVM : ViewModel() {
 
     fun addPoint(
         name: String,
-        coordinate: Position
+        coordinate: Point
     ): Boolean {
         return if (!pointsName.value?.contains(name)!!) {
             pointsName.value?.add(name)
@@ -70,7 +70,7 @@ class ProgramAndPointsVM : ViewModel() {
     fun replacePoint(
         index: Int,
         newName: String,
-        newCoordinate: Position
+        newCoordinate: Point
     ) {
         points.value?.remove(pointsName.value?.get(index))
         pointsName.value?.set(index, newName)

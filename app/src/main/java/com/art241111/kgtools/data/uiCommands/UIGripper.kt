@@ -6,7 +6,7 @@ import com.art241111.kgtools.R
 import com.github.poluka.kControlLibrary.actions.Command
 import com.github.poluka.kControlLibrary.actions.gripper.CloseGripper
 import com.github.poluka.kControlLibrary.actions.gripper.OpenGripper
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 /**
  * Commands for gripper.
@@ -21,7 +21,7 @@ class UIOpenGripper() : UICommand, Gripper() {
         return stringResource(id = R.string.command_open_gripper)
     }
 
-    override fun getCommand(points: MutableMap<String, Position>): Command {
+    override fun getCommand(points: MutableMap<String, Point>): Command {
         return OpenGripper()
     }
 
@@ -44,7 +44,7 @@ class UICloseGripper() : UICommand, Gripper() {
         return stringResource(id = R.string.command_close_gripper)
     }
 
-    override fun getCommand(points: MutableMap<String, Position>): Command {
+    override fun getCommand(points: MutableMap<String, Point>): Command {
         return CloseGripper()
     }
 

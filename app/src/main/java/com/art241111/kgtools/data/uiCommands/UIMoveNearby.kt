@@ -7,7 +7,7 @@ import com.github.poluka.kControlLibrary.actions.Command
 import com.github.poluka.kControlLibrary.actions.move.DepartPoint
 import com.github.poluka.kControlLibrary.enity.Axes
 import com.github.poluka.kControlLibrary.enity.TypeOfMovement
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 /**
  * Command to move to a point at a distance and at an angle of gripper.
@@ -30,13 +30,13 @@ class UIMoveNearby(
             "${stringResource(id = R.string.command_angle)}: $angle"
     }
 
-    override fun getCommand(points: MutableMap<String, Position>): Command? {
+    override fun getCommand(points: MutableMap<String, Point>): Command? {
         return points[pointName]?.let {
             return when (axes) {
                 Axes.X -> {
                     points[pointName]?.let {
                         DepartPoint(
-                            position = it,
+                            point = it,
                             typeOfMovement = TypeOfMovement.LMOVE,
                             dX = distance.toDouble(),
                             angle = angle.toDouble()
@@ -46,7 +46,7 @@ class UIMoveNearby(
                 Axes.Y -> {
                     points[pointName]?.let {
                         DepartPoint(
-                            position = it,
+                            point = it,
                             typeOfMovement = TypeOfMovement.LMOVE,
                             dY = distance.toDouble(),
                             angle = angle.toDouble()
@@ -56,7 +56,7 @@ class UIMoveNearby(
                 Axes.Z -> {
                     points[pointName]?.let {
                         DepartPoint(
-                            position = it,
+                            point = it,
                             typeOfMovement = TypeOfMovement.LMOVE,
                             dZ = distance.toDouble(),
                             angle = angle.toDouble()
@@ -66,7 +66,7 @@ class UIMoveNearby(
                 Axes.O -> {
                     points[pointName]?.let {
                         DepartPoint(
-                            position = it,
+                            point = it,
                             typeOfMovement = TypeOfMovement.LMOVE,
                             dO = distance.toDouble(),
                             angle = angle.toDouble()
@@ -76,7 +76,7 @@ class UIMoveNearby(
                 Axes.A -> {
                     points[pointName]?.let {
                         DepartPoint(
-                            position = it,
+                            point = it,
                             typeOfMovement = TypeOfMovement.LMOVE,
                             dA = distance.toDouble(),
                             angle = angle.toDouble()
@@ -86,7 +86,7 @@ class UIMoveNearby(
                 Axes.T -> {
                     points[pointName]?.let {
                         DepartPoint(
-                            position = it,
+                            point = it,
                             typeOfMovement = TypeOfMovement.LMOVE,
                             dT = distance.toDouble(),
                             angle = angle.toDouble()

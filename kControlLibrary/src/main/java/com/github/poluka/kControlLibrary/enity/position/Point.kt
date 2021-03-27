@@ -6,7 +6,7 @@ import com.github.poluka.kControlLibrary.enity.Axes
  * Массив, который хранит позицию робота.
  * @author artem241120@gmail.com
  */
-class Position(
+class Point(
     x: Double = 0.0,
     y: Double = 0.0,
     z: Double = 0.0,

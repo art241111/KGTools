@@ -5,7 +5,7 @@ import com.github.art241111.tcpClient.connection.Status
 import com.github.poluka.kControlLibrary.actions.Command
 import com.github.poluka.kControlLibrary.actions.annotation.ExecutedOnTheRobot
 import com.github.poluka.kControlLibrary.dsl.Program
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 import com.github.poluka.kControlLibrary.handlers.PositionHandler
 import com.github.poluka.kControlLibrary.sender.SenderForRobot
 import kotlinx.coroutines.CoroutineScope
@@ -25,9 +25,9 @@ class KRobot {
 
     private var isConnect = false
 
-    var homePosition = Position(0.0, 515.0, 242.0, 90.0, 180.0, 0.0)
+    var homePosition = Point(0.0, 515.0, 242.0, 90.0, 180.0, 0.0)
 
-    fun run(@ExecutedOnTheRobot command: Command) {
+    infix fun run(@ExecutedOnTheRobot command: Command) {
         if (isConnect) {
             sender.safeSend(command.run())
         }
@@ -36,13 +36,13 @@ class KRobot {
     /**
      * Данный метод нужно использовать только тогда, когда не важно выполниться ли команда
      */
-    fun dangerousRun(@ExecutedOnTheRobot command: Command) {
+    infix fun dangerousRun(@ExecutedOnTheRobot command: Command) {
         if (isConnect) {
             sender.send(command.run())
         }
     }
 
-    fun run(@ExecutedOnTheRobot program: Program) {
+    infix fun run(@ExecutedOnTheRobot program: Program) {
         if (isConnect) {
             program.commands.forEach { command ->
                 sender.safeSend(command.run())

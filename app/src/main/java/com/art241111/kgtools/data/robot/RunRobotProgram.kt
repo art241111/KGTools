@@ -4,7 +4,7 @@ import com.art241111.kgtools.data.uiCommands.UICommand
 import com.github.poluka.kControlLibrary.KRobot
 import com.github.poluka.kControlLibrary.actions.move.MoveToPoint
 import com.github.poluka.kControlLibrary.dsl.kProgram
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -15,8 +15,8 @@ import kotlinx.coroutines.flow.StateFlow
 class RunRobotProgram(private val robot: KRobot) {
     val programState = robot.programState
 
-    fun moveToPoint(position: Position) {
-        robot.run(MoveToPoint(position = position))
+    fun moveToPoint(point: Point) {
+        robot.run(MoveToPoint(point = point))
     }
 
     /**
@@ -26,7 +26,7 @@ class RunRobotProgram(private val robot: KRobot) {
     val isRun: StateFlow<Boolean> = _isRun
     fun runProgram(
         UICommands: List<UICommand>,
-        points: MutableMap<String, Position>
+        points: MutableMap<String, Point>
     ) {
         _isRun.value = true
 

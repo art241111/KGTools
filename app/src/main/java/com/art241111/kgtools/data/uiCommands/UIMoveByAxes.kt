@@ -6,7 +6,7 @@ import com.art241111.kgtools.R
 import com.github.poluka.kControlLibrary.actions.Command
 import com.github.poluka.kControlLibrary.actions.move.MoveByCoordinate
 import com.github.poluka.kControlLibrary.enity.Axes
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 /**
  * Command for moving along axes.
@@ -25,7 +25,7 @@ class UIMoveByAxes(
             "${stringResource(id = R.string.command_distance)}: $distance"
     }
 
-    override fun getCommand(points: MutableMap<String, Position>): Command {
+    override fun getCommand(points: MutableMap<String, Point>): Command {
         return MoveByCoordinate(axes, distance.toDouble())
     }
 

@@ -1,7 +1,7 @@
 package com.art241111.kcontrolsystem.data
 
 import androidx.compose.runtime.State
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 interface UIMoveByCoordinate {
     fun moveByX(point: Double)
@@ -13,8 +13,8 @@ interface UIMoveByCoordinate {
 }
 
 class UIMoveByCoordinateKRobot(
-    private val positionState: State<Position>,
-    private val move: (position: Position) -> Unit
+    private val positionState: State<Point>,
+    private val move: (point: Point) -> Unit
 ) : UIMoveByCoordinate {
     override fun moveByX(point: Double) {
         moveByCoordinate(0, point)

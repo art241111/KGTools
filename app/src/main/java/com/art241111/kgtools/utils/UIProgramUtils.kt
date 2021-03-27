@@ -3,7 +3,7 @@ package com.art241111.kgtools.utils
 import android.content.Context
 import com.art241111.kgtools.data.uiCommands.UICommand
 import com.art241111.saveandloadinformation.files.FilesHelper
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 private const val FILENAME = "kGT"
 
@@ -17,7 +17,7 @@ class UIProgramUtils {
     fun saveProgram(
         context: Context,
         UICommands: List<UICommand>,
-        points: Map<String, Position>
+        points: Map<String, Point>
     ) {
         filesHelper.writeToFile(
             fileName = FILENAME,
@@ -27,7 +27,7 @@ class UIProgramUtils {
     }
 
     private fun createFile(
-        points: Map<String, Position>,
+        points: Map<String, Point>,
         UICommands: List<UICommand>,
     ): String {
         var outText = "POINTS \n"
@@ -41,8 +41,8 @@ class UIProgramUtils {
         return outText
     }
 
-    fun loadProgram(context: Context): Pair<MutableMap<String, Position>, List<UICommand>> {
-        val points = mutableMapOf<String, Position>()
+    fun loadProgram(context: Context): Pair<MutableMap<String, Point>, List<UICommand>> {
+        val points = mutableMapOf<String, Point>()
         val commands = mutableListOf<UICommand>()
         var isPoint = true
 

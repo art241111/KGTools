@@ -1,38 +1,29 @@
 package com.github.poluka.kControlLibrary.actions.move
 
-import com.github.poluka.kControlLibrary.actions.Command
-import com.github.poluka.kControlLibrary.actions.annotation.ExecutedOnTheRobot
 import com.github.poluka.kControlLibrary.dsl.Program
-
-private const val MOVE_BY_COORDINATE = "MOVE;BASE"
+import com.github.poluka.kControlLibrary.enity.Distance
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 /**
- * Moving a certain distance on one axis.
- * @param x,y,z,o,a,t - coordinates that are used for moving,
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
  */
-@ExecutedOnTheRobot
-data class Move(
-    private val x: Double = 0.0,
-    private val y: Double = 0.0,
-    private val z: Double = 0.0,
-    private val o: Double = 0.0,
-    private val a: Double = 0.0,
-    private val t: Double = 0.0
-) : Command {
 
-    /**
-     * Start program.
-     */
-    override fun run(): String {
-        return "$MOVE_BY_COORDINATE;$x;$y;$z;$o;$a;$t;"
+class Move {
+    companion object {
+        infix fun to(point: Point) {
+            MoveToPoint(point)
+        }
+
+        infix fun Program.to(point: Point) {
+            add(MoveToPoint(point))
+        }
+
+        infix fun by(distance: Distance) {
+            MoveOnDistance(distance)
+        }
+
+        infix fun Program.by(distance: Distance) {
+            add(MoveOnDistance(distance))
+        }
     }
 }
-
-fun Program.move(
-    x: Double = 0.0,
-    y: Double = 0.0,
-    z: Double = 0.0,
-    o: Double = 0.0,
-    a: Double = 0.0,
-    t: Double = 0.0
-) = add(Move(x, y, z, o, a, t))

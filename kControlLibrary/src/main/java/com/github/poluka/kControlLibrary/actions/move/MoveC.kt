@@ -3,20 +3,20 @@ package com.github.poluka.kControlLibrary.actions.move
 import com.github.poluka.kControlLibrary.actions.Command
 import com.github.poluka.kControlLibrary.actions.annotation.ExecutedOnTheRobot
 import com.github.poluka.kControlLibrary.dsl.Program
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 private const val MOVE_BY_C = "CMOVE"
 
 @ExecutedOnTheRobot
 class MoveC(
-    private val positionOnArc: Position,
-    private val endPosition: Position
+    private val pointOnArc: Point,
+    private val endPoint: Point
 ) : Command {
 
-    override fun run(): String = "$MOVE_BY_C;$positionOnArc;$endPosition"
+    override fun run(): String = "$MOVE_BY_C;$pointOnArc;$endPoint"
 }
 
 fun Program.moveByArc(
-    positionOnArc: Position,
-    endPosition: Position
-) = add(MoveC(positionOnArc, endPosition))
+    pointOnArc: Point,
+    endPoint: Point
+) = add(MoveC(pointOnArc, endPoint))

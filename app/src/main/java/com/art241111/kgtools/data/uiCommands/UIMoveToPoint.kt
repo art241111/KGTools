@@ -6,7 +6,7 @@ import com.art241111.kgtools.R
 import com.github.poluka.kControlLibrary.actions.Command
 import com.github.poluka.kControlLibrary.actions.move.MoveToPoint
 import com.github.poluka.kControlLibrary.enity.TypeOfMovement
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 /**
  * Command to move to a point.
@@ -25,7 +25,7 @@ class UIMoveToPoint(
             "${stringResource(id = R.string.command_move_to_point_type)}: $type"
     }
 
-    override fun getCommand(points: MutableMap<String, Position>): Command? {
+    override fun getCommand(points: MutableMap<String, Point>): Command? {
         return points[pointName]?.let { MoveToPoint(it, type) }
     }
 

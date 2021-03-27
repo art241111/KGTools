@@ -30,8 +30,8 @@ import com.art241111.kgtools.R
 import com.art241111.kgtools.data.robot.RobotVM
 import com.art241111.kgtools.ui.mainScreen.ProgramAndPointsVM
 import com.art241111.kgtools.ui.views.DefaultScreenBody
-import com.github.poluka.kControlLibrary.actions.move.Move
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.actions.move.MoveOnDistance
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 @Composable
 fun AddPoint(
@@ -143,7 +143,7 @@ fun AddPoint(
                     defaultButtonDistanceLong = robotVM.defaultButtonDistanceLong,
                     defaultButtonDistanceShort = robotVM.defaultButtonDistanceShort,
                     move = { x, y, z, o, a, t ->
-                        robotVM.dangerousRun(Move(x, y, z, o, a, t))
+                        robotVM.dangerousRun(MoveOnDistance(x, y, z, o, a, t))
                     }
                 ),
                 moveByCoordinate = UIMoveByCoordinateKRobot(coordinate) {},
@@ -157,7 +157,7 @@ fun AddPoint(
 private fun addPoint(
     pointsVM: ProgramAndPointsVM,
     name: String,
-    coordinates: Position,
+    coordinates: Point,
     context: Context,
     nameTakeErrorText: String,
     navigateBack: () -> Unit,

@@ -10,7 +10,7 @@ import com.art241111.kgtools.data.uiCommands.UICommand
 import com.art241111.saveandloadinformation.sharedPreferences.SharedPreferencesHelperForString
 import com.github.poluka.kControlLibrary.KRobot
 import com.github.poluka.kControlLibrary.actions.Command
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -35,7 +35,7 @@ class RobotVM : ViewModel() {
     val isRun: StateFlow<Boolean> = runProgramRobot.isRun
     fun runProgram(
         UICommands: List<UICommand>,
-        points: MutableMap<String, Position>
+        points: MutableMap<String, Point>
     ) {
         runProgramRobot.runProgram(UICommands, points)
     }
@@ -43,8 +43,8 @@ class RobotVM : ViewModel() {
     /**
      * Move to point.
      */
-    fun moveToPoint(position: Position) {
-        runProgramRobot.moveToPoint(position = position)
+    fun moveToPoint(point: Point) {
+        runProgramRobot.moveToPoint(point = point)
     }
 
     fun dangerousRun(command: Command) {

@@ -5,7 +5,7 @@ import androidx.compose.ui.res.stringResource
 import com.art241111.kgtools.R
 import com.github.poluka.kControlLibrary.actions.Command
 import com.github.poluka.kControlLibrary.actions.delay.WaitingSignal
-import com.github.poluka.kControlLibrary.enity.position.Position
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 /**
  *Command to move to a point.
@@ -22,7 +22,7 @@ class UIWaitSignal(
         return "${stringResource(id = R.string.command_wait_signal)}: $signal"
     }
 
-    override fun getCommand(points: MutableMap<String, Position>): Command {
+    override fun getCommand(points: MutableMap<String, Point>): Command {
         return WaitingSignal(signal)
     }
 
