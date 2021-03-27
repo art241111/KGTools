@@ -13,7 +13,7 @@ private const val MOVE_BY_COORDINATE = "MOVE;BASE"
  * @param distance - the distance to which the movement takes place.
  */
 @ExecutedOnTheRobot
-data class MoveByCoordinate(
+data class MoveByAxes(
     private val axes: Axes,
     private val distance: Double
 ) : Command {
@@ -29,4 +29,4 @@ data class MoveByCoordinate(
 //    "$MOVE_BY_COORDINATE;${(coordinate.ordinal + 1)};$distance"
 }
 
-fun Program.moveByCoordinate(axes: Axes, distance: Double) = add(MoveByCoordinate(axes, distance))
+fun Program.moveByAxes(axes: Axes, distance: Double) = add(MoveByAxes(axes, distance))

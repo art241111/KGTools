@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import com.art241111.kgtools.R
 import com.github.poluka.kControlLibrary.actions.Command
-import com.github.poluka.kControlLibrary.actions.move.MoveByCoordinate
+import com.github.poluka.kControlLibrary.actions.move.MoveByAxes
 import com.github.poluka.kControlLibrary.enity.Axes
 import com.github.poluka.kControlLibrary.enity.position.Point
 
@@ -26,7 +26,7 @@ class UIMoveByAxes(
     }
 
     override fun getCommand(points: MutableMap<String, Point>): Command {
-        return MoveByCoordinate(axes, distance.toDouble())
+        return MoveByAxes(axes, distance.toDouble())
     }
 
     override fun getImage(): Int = R.drawable.icon_move_by_coordinate
