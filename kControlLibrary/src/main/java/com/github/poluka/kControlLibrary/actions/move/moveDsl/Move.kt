@@ -10,6 +10,8 @@ import com.github.poluka.kControlLibrary.enity.Distance
 import com.github.poluka.kControlLibrary.enity.position.Point
 
 /**
+ * Extension class for creating infix commands.
+ *
  * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
  */
 
