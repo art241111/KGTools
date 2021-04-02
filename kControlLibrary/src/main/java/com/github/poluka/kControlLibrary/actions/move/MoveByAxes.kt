@@ -11,6 +11,8 @@ private const val MOVE_BY_COORDINATE = "MOVE;BASE"
  * Moving a certain distance on one axis.
  * @param axes - coordinates that are used for moving,
  * @param distance - the distance to which the movement takes place.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
  */
 @ExecutedOnTheRobot
 data class MoveByAxes(
