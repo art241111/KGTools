@@ -11,6 +11,6 @@ class Signal(private val signal: Int) : Command {
     override fun run(): String = "$command;$signal"
 }
 
-fun Program.signalOn(signal: Int) = add(Signal(signal))
+infix fun Program.signalOn(signal: Int) = add(Signal(signal))
 
-fun Program.signalOff(signal: Int) = add(Signal(-signal))
+infix fun Program.signalOff(signal: Int) = add(Signal(-signal))

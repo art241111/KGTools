@@ -14,4 +14,4 @@ class WaitingSignal(val signal: Int) : Command {
     override fun run(): String = "$command;$signal"
 }
 
-fun Program.waitSignal(signal: Int) = add(WaitingSignal(signal))
+infix fun Program.waitSignal(signal: Int) = add(WaitingSignal(signal))
