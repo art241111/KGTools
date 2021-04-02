@@ -15,7 +15,7 @@ private const val MOVE_BY_COORDINATE = "MOVE;BASE"
 @ExecutedOnTheRobot
 data class MoveByAxes(
     private val axes: Axes,
-    private val distance: Double
+    private var distance: Double
 ) : Command {
 
     /**
@@ -27,6 +27,10 @@ data class MoveByAxes(
         return "$MOVE_BY_COORDINATE;${arrayMoving.joinToString(separator = ";")}"
     }
 //    "$MOVE_BY_COORDINATE;${(coordinate.ordinal + 1)};$distance"
+
+    internal infix fun on(_distance: Double) {
+        distance = _distance
+    }
 }
 
 fun Program.moveByAxes(axes: Axes, distance: Double) = add(MoveByAxes(axes, distance))
