@@ -1,3 +1,63 @@
 <resources>
-    <string name="app_name">KControlSystem</string>
+    <string name="app_name" translatable="false">KControlSystem</string>
+
+    <string name="cancel">Cancel</string>
+
+<!--    Preview Screen-->
+    <string name="robowizard">Robowizard</string>
+    <string name="create_by_artem_gersimov">Create by Artem Gerasimov</string>
+
+<!--    Connect Screen-->
+    <string name="connect">CONNECT</string>
+    <string name="connection">CONNECTION</string>
+    <string name="robot_ip">Robot IP</string>
+    <string name="connect_error">Connection error</string>
+
+<!--    Programs name-->
+    <string name="program">PROGRAM</string>
+    <string name="program_first_command">Create first command</string>
+
+
+    <string name="add_command">Add command</string>
+    <string name="edit_command">Edit command</string>
+    <string name="command_move_to_point">Move to point</string>
+    <string name="command_move_to_point_type">Type of movement</string>
+    <string name="command_move_to_point_not_create">Points are not created</string>
+    <string name="command_move_to_point_not_found">Point is not fond</string>
+    <string name="command_move_to_point_create_point">At the beginning, create a point</string>
+    <string name="command_move_to_point_choose_point">Choose point</string>
+    <string name="command_nearby">Move nearby</string>
+
+    <string name="command_move_by_axes">Move by axes</string>
+    <string name="command_move_by_axes_select_axes">Select axes</string>
+
+    <string name="command_move_by">Move by</string>
+    <string name="command_distance">At a distance</string>
+    <string name="command_angle">At a angle</string>
+
+    <string name="command_open_gripper">Gripper: open</string>
+    <string name="command_close_gripper">Gripper: close</string>
+
+    <string name="command_repeat">Repeat</string>
+
+    <string name="command_wait_signal">Wait signal</string>
+
+
+<!--    Points name-->
+    <string name="points">POINTS</string>
+    <string name="points_first_point">Create first point</string>
+
+    <string name="point_name">Point name</string>
+    <string name="point_coordinate">Coordinates point</string>
+    <string name="point_add">Add point</string>
+    <string name="point_name_take">This name is taken</string>
+
+<!--    Settings-->
+    <string name="settings">Settings</string>
+    <string name="settings_delay_send">Delay sending commands</string>
+    <string name="settings_fast_move">Fast move</string>
+    <string name="settings_slow_move">Point movement</string>
+
+<!--    Control-->
+    <string name="control_tint_mode">TINT MODE</string>
 </resources>

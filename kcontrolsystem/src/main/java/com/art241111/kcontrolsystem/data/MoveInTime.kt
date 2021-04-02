@@ -1,6 +1,5 @@
 package com.art241111.kcontrolsystem.data
 
-import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -15,14 +14,14 @@ const val LONG_MOVE_SP = "LONG_MOVE"
 const val SHORT_MOVE_SP = "SHORT_MOVE"
 
 class MoveInTime(
-    private val move: (x: Double, y: Double, z: Double, o: Double, a: Double, t: Double) -> Unit
-) {
     /**
      * Задержка отправки сообщения
      */
-    var delaySending = 70L
-    var defaultButtonDistanceLong = 10.0
-    var defaultButtonDistanceShort = 1.0
+    var delaySending: Long = 70L,
+    var defaultButtonDistanceLong: Double = 10.0,
+    var defaultButtonDistanceShort: Double = 1.0,
+    private val move: (x: Double, y: Double, z: Double, o: Double, a: Double, t: Double) -> Unit
+) {
 
     private var isMoving = false
 
@@ -83,7 +82,6 @@ class MoveInTime(
                         jobMoving.cancel()
                         this.cancel()
                     }
-                    Log.d("Job", jobMoving.children.joinToString())
                     delay(delaySending)
                 }
             }
@@ -93,7 +91,7 @@ class MoveInTime(
     /**
      * Остановка цикла отправки и обнуление массива перемещений
      */
-    fun stopMoving() {
+    private fun stopMoving() {
         isMoving = false
         moveDistance = Array(6) { 0.0 }
 

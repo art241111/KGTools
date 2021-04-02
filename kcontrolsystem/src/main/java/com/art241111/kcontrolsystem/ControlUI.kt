@@ -8,15 +8,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.art241111.kcontrolsystem.data.ControlVM
 import com.art241111.kcontrolsystem.data.MoveInTime
-import com.art241111.kcontrolsystem.data.Position
 import com.art241111.kcontrolsystem.data.UIMoveByCoordinate
 import com.art241111.kcontrolsystem.ui.buttons.ButtonsView
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 @Composable
 fun ControlView(
     modifier: Modifier = Modifier,
-    coordinate: State<Position>,
+    coordinate: State<Point>,
     moveInTime: MoveInTime,
     moveByCoordinate: UIMoveByCoordinate,
     tiltControl: TiltControl,

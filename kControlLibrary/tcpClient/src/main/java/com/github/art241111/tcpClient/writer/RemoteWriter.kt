@@ -5,7 +5,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.io.PrintStream
 import java.net.Socket
-import java.util.*
+import java.util.LinkedList
+import java.util.Queue
 
 /**
  * This class creates a Writer that allows
@@ -29,7 +30,6 @@ class RemoteWriter : RemoteWriterImp, Sender, SafeSender {
      * @param text - the text that will be sent to the server.
      */
     override fun send(text: String) {
-        println(text)
         writer.print(text)
         writer.flush()
     }

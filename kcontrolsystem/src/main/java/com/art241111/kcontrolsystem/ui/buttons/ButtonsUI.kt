@@ -30,11 +30,11 @@ import androidx.compose.ui.unit.dp
 import com.art241111.kcontrolsystem.R
 import com.art241111.kcontrolsystem.data.ControlVM
 import com.art241111.kcontrolsystem.data.MoveInTime
-import com.art241111.kcontrolsystem.data.Position
 import com.art241111.kcontrolsystem.data.UIMoveByCoordinate
 import com.art241111.kcontrolsystem.ui.theme.TextHeader
 import com.art241111.kcontrolsystem.ui.theme.red500
 import com.art241111.kcontrolsystem.ui.utils.TiltControl
+import com.github.poluka.kControlLibrary.enity.position.Point
 
 @Composable
 private fun IconButtonWithState(
@@ -81,7 +81,7 @@ private fun IconButtonWithState(
 @Composable
 internal fun ButtonsView(
     modifier: Modifier = Modifier,
-    coordinate: State<Position>,
+    coordinate: State<Point>,
     moveInTime: MoveInTime,
     moveByCoordinate: UIMoveByCoordinate,
     tiltControl: TiltControl,
@@ -165,7 +165,7 @@ internal fun ButtonsView(
 
 @Composable
 private fun SlowMoving(
-    coordinate: State<Position>,
+    coordinate: State<Point>,
     moveInTime: MoveInTime,
     moveByCoordinate: UIMoveByCoordinate,
     enabled: Boolean = true

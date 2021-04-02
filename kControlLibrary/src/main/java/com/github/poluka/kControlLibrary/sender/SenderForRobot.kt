@@ -2,15 +2,23 @@ package com.github.poluka.kControlLibrary.sender
 
 import com.github.art241111.tcpClient.writer.SafeSender
 import com.github.art241111.tcpClient.writer.Sender
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
-import java.util.*
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
+import java.util.LinkedList
+import java.util.Queue
 
 internal class SenderForRobot(
     private val sender: Sender,
-    private val incomingText: StateFlow<String>
+    private val incomingText: SharedFlow<String>
 ) : Sender, SafeSender {
     var programStatus: StateFlow<ProgramStatus> = MutableStateFlow(ProgramStatus(ProgramStatusEnum.READY_TO_SEND))
     private val sendQueue: Queue<String> = LinkedList()
@@ -85,7 +93,6 @@ internal class SenderForRobot(
                 incomingText.collect { text ->
 
                     if (text.contains("PROGRAM")) {
-                        println(text)
                         if (text.contains("SUCCESSFULLY")) {
                             programStatus.value.status = ProgramStatusEnum.READY_TO_SEND
                         } else if (text.contains("ERROR")) {
