@@ -7,17 +7,31 @@ import com.github.poluka.kControlLibrary.enity.Axes
 import com.github.poluka.kControlLibrary.enity.TypeOfMovement
 import com.github.poluka.kControlLibrary.enity.position.Point
 
+/**
+ * This command allows you to move the robot at a distance from the point.
+ * @param point - the point to move to.
+ * @param typeOfMovement - type of he robot movement.
+ * @param angle - the angle at which the gripper will turn.
+ * @param dX - X-axis distance
+ * @param dY - Y-axis distance
+ * @param dZ - Z-axis distance
+ * @param dO - O-axis distance
+ * @param dA - A-axis distance
+ * @param dT - T-axis distance
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 @ExecutedOnTheRobot
 data class DepartPoint(
-    val point: Point,
-    val typeOfMovement: TypeOfMovement = TypeOfMovement.LMOVE,
-    val angle: Double = 0.0,
-    val dX: Double = 0.0,
-    val dY: Double = 0.0,
-    val dZ: Double = 0.0,
-    val dO: Double = 0.0,
-    val dA: Double = 0.0,
-    val dT: Double = 0.0
+    private val point: Point,
+    private val typeOfMovement: TypeOfMovement = TypeOfMovement.LMOVE,
+    private val angle: Double = 0.0,
+    private val dX: Double = 0.0,
+    private val dY: Double = 0.0,
+    private val dZ: Double = 0.0,
+    private val dO: Double = 0.0,
+    private val dA: Double = 0.0,
+    private val dT: Double = 0.0
 ) : Command {
     override fun run(): String {
         val newPosition = Point(
