@@ -8,6 +8,13 @@ import com.github.poluka.kControlLibrary.enity.position.Point
 
 private const val MOVE_TO_POINT = "MOVETO"
 
+/**
+ * This command allows you to move the robot at the point.
+ * @param point - the point to move to.
+ * @param typeOfMovement - type of he robot movement.
+ *
+ * @author Created by Artem Gerasimov (gerasimov.av.dev@gmail.com).
+ */
 @ExecutedOnTheRobot
 data class MoveToPoint(
     private val point: Point,
